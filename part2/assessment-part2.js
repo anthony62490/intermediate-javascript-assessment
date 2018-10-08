@@ -96,7 +96,10 @@ var boundToElephant = large.bind(elephant);
 
 // CODE HERE...
 
-
+function deathStar(capacity, crew)
+{
+  return capacity.bind(crew);
+}
 
 // *************
 // * PROBLEM 4 *
@@ -110,7 +113,12 @@ var boundToElephant = large.bind(elephant);
 // The closure function will return the combined value of assets and liabilities.
 
 // CODE HERE...
-
+function accountingOffice(assets)
+{
+  return (liabilities) => {
+    return assets + liabilities;
+  }
+}
 
 
 // *************
