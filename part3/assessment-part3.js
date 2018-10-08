@@ -13,7 +13,16 @@
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
+function callBinding(magicAnimals, updateAnimal, id)
+{
+  // console.log('updateAnimal is a', typeof updateAnimal);
+  let i = magicAnimals.findIndex(e => e.id === id);
 
+  //apply the given animal as the context of the function
+  updateAnimal.bind(magicAnimals[i]);
+  return updateAnimal('Trogdor');
+  // console.log('this', magicAnimals[i].updateAnimal('Trogdor'));
+}
 
 
 // *************
@@ -27,8 +36,17 @@
 // with the context of the animal, and the array ['being majestic', 'eating rainbows'] as a parameter.
 // return the result of your updateAnimal invocation
 
-// CODE HERE...
 
+// NOT WORKING
+function applyBinding(magicAnimals, updateAnimal, id)
+{
+  console.log('magicAnimals', magicAnimals);
+  let i = magicAnimals.findIndex(e => e.id === id);
+  
+  updateAnimal.bind(magicAnimals[i]);
+  let x = updateAnimal(['being majestic', 'eating rainbows']);
+  console.log('x', x);
+}
 
 
 // *************
@@ -48,7 +66,12 @@
 var foo;
 
 // CODE HERE...
-
+function promiseMe($q)
+{
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {resolve(foo = 'bar')}, 20);
+  });
+}
 
 
 // *************
