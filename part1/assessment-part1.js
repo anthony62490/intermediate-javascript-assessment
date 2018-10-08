@@ -124,7 +124,13 @@ mustang.drive();
 
 
 // CODE HERE...
-
+String.prototype.grammarPolice = function() 
+{
+  let strArr = this.split(' ');
+  return strArr.map(e => {
+    return e[0].toUpperCase() + e.slice(1).toLowerCase();
+  }).join(' ');
+}
 
 
 // *************
@@ -142,7 +148,21 @@ mustang.drive();
 // In all other cases, return "Different values"
 
 // CODE HERE...
-
+function valueType(a, b)
+{
+  if(a === b)
+  {
+    return "Exactly the same";
+  }
+  else if( a == b)
+  {
+    return "Same value, different types";
+  }
+  else
+  {
+    return "Different values";
+  }
+}
 
 
 // *************
