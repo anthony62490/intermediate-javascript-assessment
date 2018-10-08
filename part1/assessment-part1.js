@@ -177,3 +177,7 @@ function valueType(a, b)
 var theAnswer = "Unknown";
 
 // CODE HERE...
+function promiseCatcher(a)
+{
+  theAnswer = a.resolve();
+}
