@@ -90,12 +90,13 @@ function promiseMe($q)
 // CODE HERE...
 function emailList($q, $http)
 {
-  let arr = [];
   //Unfinished
   $q = new Promise((resolve, reject) => {
+    let arr = [];
     $http.get('/api/users')
     .then(response => arr = response.data.map(e => e.email));
-    resolve(Promise);
+    resolve(arr);
   });
+  console.log('$q', $q);
   return $q;
 }
