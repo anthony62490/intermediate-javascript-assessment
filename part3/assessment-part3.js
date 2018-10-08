@@ -37,15 +37,16 @@ function callBinding(magicAnimals, updateAnimal, id)
 // return the result of your updateAnimal invocation
 
 
-// NOT WORKING
 function applyBinding(magicAnimals, updateAnimal, id)
 {
-  console.log('magicAnimals', magicAnimals);
+  //unfinished. I don't see how this is different from the previous puzzle
+
+  // console.log('magicAnimals', magicAnimals);
   let i = magicAnimals.findIndex(e => e.id === id);
   
   updateAnimal.bind(magicAnimals[i]);
-  let x = updateAnimal(['being majestic', 'eating rainbows']);
-  console.log('x', x);
+  return updateAnimal(['being majestic', 'eating rainbows']);
+  // console.log('x', x);
 }
 
 
@@ -87,3 +88,14 @@ function promiseMe($q)
 // and then resolve the array as you complete your promise.
 
 // CODE HERE...
+function emailList($q, $http)
+{
+  let arr = [];
+  //Unfinished
+  $q = new Promise((resolve, reject) => {
+    $http.get('/api/users')
+    .then(response => arr = response.data.map(e => e.email));
+    resolve(Promise);
+  });
+  return $q;
+}
