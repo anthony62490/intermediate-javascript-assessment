@@ -43,7 +43,14 @@ function noWeakLink() {
     method: 'GET',
     url: '/api/users'
   })
-  // CODE HERE...
+  .then(response => {
+    firstUser = response.data[0];
+    return response;
+  })
+  .then(response => {
+    thirdUser = response.data[2];
+    return response.data[9];
+  })
 
 }
 
@@ -75,7 +82,7 @@ function large() {
 }
 // CODE HERE...
 
-
+var boundToElephant = large.bind(elephant);
 
 // *************
 // * PROBLEM 3 *
