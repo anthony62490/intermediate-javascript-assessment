@@ -91,11 +91,11 @@ function promiseMe($q)
 function emailList($q, $http)
 {
   //Unfinished
-  $q = new Promise((resolve, reject) => {
+  $q = new Promise(async (resolve, reject) => {
     let arr = [];
     $http.get('/api/users')
     .then(response => arr = response.data.map(e => e.email));
-    resolve(arr);
+    resolve(await arr);
   });
   console.log('$q', $q);
   return $q;
