@@ -143,7 +143,16 @@ function accountingOffice(assets)
 // };
 
 // CODE HERE...
-
+function forgetter(name)
+{
+  // console.log('name', name);
+  let things = []
+  return rememberall = (item) => {
+    // console.log('item', item);
+    things.push(item);
+    return {name, remember: things};
+  }
+}
 
 
 // *************
@@ -171,3 +180,20 @@ function accountingOffice(assets)
 // NOTE: Neither hunger nor danger should be able to exceed 100 or drop below 0.
 
 // CODE HERE...
+function frodo(startingHungerValue, startingDangerValue)
+{
+  let hunger = startingHungerValue;
+  let danger = startingDangerValue;
+  return {
+    dinnerOverFire: () => {
+      hunger-25 >= 0 ? hunger -= 25 : hunger=0;
+      danger+40 <= 100 ? danger+=40 : danger=100;
+      return {hunger, danger};
+    },
+    hidingInBush: () => {
+      hunger+35 <= 100 ? hunger+=35 : hunger=100;
+      danger-20 >= 0 ? danger -= 20 : danger=0;
+      return {hunger, danger};
+    }
+  }
+}
